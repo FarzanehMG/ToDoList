@@ -50,7 +50,7 @@ namespace SimpleToDoList.Pages
                 HttpContext.Session.Set("AccountId", accountId.ToByteArray());
 
                 // Redirect to ToDoList page with the retrieved account ID
-                return RedirectToPage("ToDoList", new { accountId });
+                return RedirectToPage("EmployeesAssignment", new { accountId });
             }
             else
             {

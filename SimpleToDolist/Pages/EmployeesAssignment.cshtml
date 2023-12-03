@@ -1,0 +1,74 @@
+﻿@page
+@model SimpleToDolist.Pages.EmployeesAssignmentModel
+@{
+}
+
+<label>Project </label>
+<div id="Grid">
+    <table cellpadding="5" cellspacing="0" style="border: 1pxsolid #ccc;font-size: 9pt;font-family:Arial">
+        <tr>
+            <th style="background-color: #B8DBFD;border: 1px solid #ccc">Name</th>
+            <th style="background-color: #B8DBFD;border: 1px solid #ccc">Status</th>
+            <th style="background-color: #B8DBFD;border: 1px solid #ccc">CreationDate</th>           
+        </tr>
+        @foreach (var project in Model.Projects)
+        {
+            <tr>
+                <td style="width:120px;border: 1px solid #ccc">@project.Name</td>
+
+                <td style="width:120px;border: 1px solid #ccc">
+                    <input name="IsCompletedToDo" type="checkbox" onchange="updateCompletionStatus('@project.Id', this.checked)" checked="@project.IsActive" />
+                </td>
+
+                <td style="width:120px;border: 1px solid #ccc">@project.CreationDate</td>
+            </tr>
+        }
+    </table>
+</div>
+
+<label>Task </label>
+<div id="Grid">
+    <table cellpadding="5" cellspacing="0" style="border: 1pxsolid #ccc;font-size: 9pt;font-family:Arial">
+        <tr>
+            <th style="background-color: #B8DBFD;border: 1px solid #ccc">Name</th>
+            <th style="background-color: #B8DBFD;border: 1px solid #ccc">Status</th>
+            <th style="background-color: #B8DBFD;border: 1px solid #ccc">CreationDate</th>
+        </tr>
+        @foreach (var task in Model.Tasks)
+        {
+            <tr>
+                <td style="width:120px;border: 1px solid #ccc">@task.Name</td>
+
+                <td style="width:120px;border: 1px solid #ccc">
+                    <input name="IsCompletedToDo" type="checkbox" onchange="updateCompletionStatus('@task.Id', this.checked)" checked="@task.IsComplete" />
+                </td>
+
+                <td style="width:120px;border: 1px solid #ccc">@task.CreationDate</td>
+            </tr>
+        }
+    </table>
+</div>
+<label>ToDo </label>
+<div id="Grid">
+    <table cellpadding="5" cellspacing="0" style="border: 1pxsolid #ccc;font-size: 9pt;font-family:Arial">
+        <tr>
+            <th style="background-color: #B8DBFD;border: 1px solid #ccc">Name</th>
+            <th style="background-color: #B8DBFD;border: 1px solid #ccc">Status</th>
+            <th style="background-color: #B8DBFD;border: 1px solid #ccc">CreationDate</th>
+        </tr>
+        @foreach (var toDo in Model.Todos)
+        {
+            <tr>
+                <td style="width:120px;border: 1px solid #ccc">@toDo.Name</td>
+
+                <td style="width:120px;border: 1px solid #ccc">
+                    <input name="IsCompletedToDo" type="checkbox" onchange="updateCompletionStatus('@toDo.Id', this.checked)" checked="@toDo.IsComplete" />
+                </td>
+
+                <td style="width:120px;border: 1px solid #ccc">@toDo.CreationDate</td>
+            </tr>
+        }
+    </table>
+</div>
+
+

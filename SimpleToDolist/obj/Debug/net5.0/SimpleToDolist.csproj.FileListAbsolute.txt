@@ -177,3 +177,4 @@ D:\.NETCore\SimpleToDolist\SimpleToDolist\obj\Debug\net5.0\SimpleToDolist.Views.
 D:\.NETCore\SimpleToDolist\SimpleToDolist\obj\Debug\net5.0\SimpleToDolist.csproj.CopyComplete
 D:\.NETCore\SimpleToDolist\SimpleToDolist\obj\Debug\net5.0\SimpleToDolist.genruntimeconfig.cache
 D:\.NETCore\SimpleToDolist\SimpleToDolist\obj\Debug\net5.0\ref\SimpleToDolist.dll
+\\192.168.1.9\Public\Karamouz-1402\تمرین\FarzanehGholian\DotNet\SimpleToDolist\SimpleToDolist\obj\Debug\net5.0\Razor\Pages\EmployeesAssignment.cshtml.g.cs

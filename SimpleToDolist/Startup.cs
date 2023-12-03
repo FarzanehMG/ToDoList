@@ -20,6 +20,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using SimpleToDoList.Application.Contracts.Employee;
 using SimpleToDoList.Application.Contracts.Project;
+using SimpleToDoList.Application.Contracts.ProjectTask;
 
 namespace SimpleToDolist
 {
@@ -48,6 +49,7 @@ namespace SimpleToDolist
             services.AddTransient<IPasswordHasher, PasswordHasher>();
             services.AddTransient<IEmployeeApplication, EmployeeApplication>();
             services.AddTransient<IProjectApplication, ProjectApplication>();
+            services.AddTransient<IProjectTaskApplication, ProjectTaskApplication>();
 
             services.AddDbContext<ToDoContext>(options => options.UseSqlServer("Data Source=192.168.1.8;Initial Catalog=ToDoTest2;User ID=karamouz;Password=Vision@190"));
 

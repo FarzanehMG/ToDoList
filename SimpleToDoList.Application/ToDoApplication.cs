@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Shared;
 using SimpleToDoList.Application.Contracts;
 using SimpleToDoList.Domain;
 using SimpleToDoList.Domain.ToDo;
@@ -155,7 +156,7 @@ namespace SimpleToDoList.Application
                     Id = todo.Id,
                     Name = todo.Name,
                     IsComplete = todo.IsComplete,
-                    CreationDate = todo.CreationDate.ToString(),
+                    CreationDate = Tools.ToPersianDate(todo.CreationDate),
                     AccountId = todo.AccountId
                 })
                 .ToList();

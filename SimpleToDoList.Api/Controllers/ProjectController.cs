@@ -156,6 +156,35 @@ namespace SimpleToDoList.Api.Controllers
             }
         }
 
+        [HttpPost("FilterAssignProjectByIsComplete")]
+        public IActionResult FilterAssignProjectByIsComplete(AssignProject command)
+        {
+            Guid loggedInAccountId = GetLoggedInAccountId();
+
+            if (loggedInAccountId == Guid.Empty)
+            {
+                return Unauthorized(new { Message = "Unauthorized: No or invalid token provided" });
+            }
+
+            if (command.AdminId == loggedInAccountId)
+            {
+                var projectTasks = _projectApplication.FilterAssignProjectByIsComplete(command);
+
+                if (projectTasks == null)
+                {
+                    // Handle the case where there was an issue filtering the project tasks
+                    return BadRequest(new { Message = "Error filtering project tasks." });
+                }
+
+                return Ok(projectTasks);
+            }
+            else
+            {
+                // If the conditions are not met, return unauthorized
+                return Unauthorized(new { Message = "Unauthorized: Insufficient privileges" });
+            }
+        }
+
         private Guid GetLoggedInAccountId()
         {
             string token = HttpContext.Request.Headers["Authorization"];

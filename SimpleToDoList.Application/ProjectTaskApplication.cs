@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Shared;
 using SimpleToDoList.Application.Contracts.Account;
 using SimpleToDoList.Application.Contracts.Project;
 using SimpleToDoList.Application.Contracts.ProjectTask;
@@ -201,12 +202,12 @@ namespace SimpleToDoList.Application
              
         }
 
-        public List<ProjectTaskViewModel> GetEmployeeTasks(Guid employeeId)
+        public List<ProjectTaskViewModel> GetEmployeeTasks(Guid AccountId)
         {
             var employee = _todoContext.Employees
                 .Include(e => e.ProjectTasks)
                 .ThenInclude(pt => pt.Projects)
-                .FirstOrDefault(e => e.Id == employeeId);
+                .FirstOrDefault(e => e.AccountId == AccountId);
 
             if (employee != null && employee.ProjectTasks != null && employee.ProjectTasks.Any())
             {
@@ -216,7 +217,7 @@ namespace SimpleToDoList.Application
                     Id = task.Id,
                     Name = task.Name,
                     IsComplete = task.IsComplete,
-                    CreationDate = task.CreationDate.ToString(),
+                    CreationDate = Tools.ToPersianDate(task.CreationDate),
                     ProjectName = task.Projects.FirstOrDefault() != null ? task.Projects.First().Name : string.Empty,
                     ProjectId = task.Projects.Select(p => p.Id).ToList(),
                     EmployeeId = task.Employees.Select(e=>e.Id).ToList(),

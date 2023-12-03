@@ -1,5 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Shared;
 using SimpleToDoList.Application.Contracts.Project;
+using SimpleToDoList.Application.Contracts.ProjectTask;
 using SimpleToDoList.Domain;
 using SimpleToDoList.Infrastructure;
 using System;
@@ -126,7 +128,7 @@ namespace SimpleToDoList.Application
 
         }
 
-        public List<ProjectViewModel> GetEmployeeProjects(Guid employeeId)
+        public List<ProjectViewModel> GetEmployeeProjects(Guid accountId)
         {
             /*var employee = _todoContext.Employees.Find(employeetId);
             var employeeProject = _todoContext.Employees.Where(x => x.Id == employeetId);
@@ -142,7 +144,7 @@ namespace SimpleToDoList.Application
 
             var employee = _todoContext.Employees
                 .Include(e => e.Projects) // Include projects navigation property
-                .FirstOrDefault(e => e.Id == employeeId);
+                .FirstOrDefault(e => e.AccountId == accountId);
 
             if (employee != null)
             {
@@ -152,7 +154,7 @@ namespace SimpleToDoList.Application
                     Id = project.Id,
                     Name = project.Name,
                     IsActive = project.IsActive,
-                    CreationDate = project.CreationDate.ToString(),
+                    CreationDate = Tools.ToPersianDate(project.CreationDate),
                     //EmployeeId = project.Employees.FirstOrDefault() != null ? project.Employees.First().Id : Guid.Empty,
                     AccountId = project.Employees.FirstOrDefault() != null ? project.Employees.First().AccountId : Guid.Empty
                 }).ToList();
@@ -221,9 +223,9 @@ namespace SimpleToDoList.Application
 
         public string AssignProject(AssignProject command)
         {
-            var task = _todoContext.Projects.Find(command.ProjectId);
+            var project = _todoContext.Projects.Find(command.ProjectId);
 
-            if (task == null)
+            if (project == null)
             {
                 return "Project not found.";
             }
@@ -236,23 +238,74 @@ namespace SimpleToDoList.Application
             }
 
             // Ensure that task.Employees is initialized
-            if (task.Employees == null)
+            if (project.Employees == null)
             {
-                task.Employees = new List<Employee>();
+                project.Employees = new List<Employee>();
             }
 
             // Update the reference to the employee
             //task.Employees.Clear();  // Assuming that you want to replace all existing employees
-            task.Employees.Add(employee);
+            project.Employees.Add(employee);
 
             _todoContext.SaveChanges();
 
             return "Project assigned to the employee successfully.";
         }
 
-        public string FilterAssignProjectByIsComplete(AssignProjectFilter command)
+        public List<AssignProjectFilterViewModel> FilterAssignProjectByIsComplete(AssignProject command)
         {
-            throw new NotImplementedException();
+            var employee = _todoContext.Employees
+                .Include(e => e.ProjectTasks)
+                .ThenInclude(pt => pt.Projects)
+                .FirstOrDefault(e => e.Id == command.EmployeeId);
+
+            if (employee == null)
+            {
+                // Return an error message or handle the situation accordingly
+                return new List<AssignProjectFilterViewModel> { new AssignProjectFilterViewModel { ErrorMessage = "Employee not found." } };
+            }
+
+            var incompleteTasks = employee.ProjectTasks.Where(x => !x.IsComplete).ToList();
+
+            if (incompleteTasks.Count != 0)
+            {
+                var tasks = incompleteTasks.Select(x => new AssignProjectFilterViewModel
+                {
+                    TaskName = x.Name,
+                    IsCompleted = x.IsComplete
+                }).ToList();
+
+                return tasks;
+            }
+
+            AssignProject(command);
+            return new List<AssignProjectFilterViewModel>();
+
+
+            /*var employee = _todoContext.Employees
+                .Include(e => e.ProjectTasks)
+                .ThenInclude(pt => pt.Projects)
+                .FirstOrDefault(e => e.Id == command.EmployeeId);
+
+            var projectTaskViewModels = employee.ProjectTasks.Where(x => x.IsComplete == false).Select(task => new ProjectTaskViewModel
+            {
+                Id = task.Id,
+                Name = task.Name,
+                IsComplete = task.IsComplete,
+                CreationDate = task.CreationDate.ToString(),
+                ProjectName = task.Projects.FirstOrDefault() != null ? task.Projects.First().Name : string.Empty,
+                ProjectId = task.Projects.Select(p => p.Id).ToList(),
+                EmployeeId = task.Employees.Select(e => e.Id).ToList(),
+                AccountId = task.Employees.FirstOrDefault() != null ? task.Employees.First().AccountId : Guid.Empty
+            }).ToList();
+
+            if (projectTaskViewModels is null)
+            {             
+                return "Project cannot assigned to the employee.";
+            }
+
+            AssignProject(command);*/
         }
+
     }
 }

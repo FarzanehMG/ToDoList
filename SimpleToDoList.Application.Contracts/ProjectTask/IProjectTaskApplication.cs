@@ -14,7 +14,7 @@ namespace SimpleToDoList.Application.Contracts.ProjectTask
         public ProjectTaskViewModel GetTaskById(Guid id);
         public string AssignTask(AssignTask command); 
 
-        //public List<ProjectTaskViewModel> GetEmployeeTasks(Guid employeeId);
+        public List<ProjectTaskViewModel> GetEmployeeTasks(Guid employeeId);
 
     }
 }

@@ -200,5 +200,33 @@ namespace SimpleToDoList.Application
             return "Task assigned to the employee successfully.";
              
         }
+
+        public List<ProjectTaskViewModel> GetEmployeeTasks(Guid employeeId)
+        {
+            var employee = _todoContext.Employees
+                .Include(e => e.ProjectTasks)
+                .ThenInclude(pt => pt.Projects)
+                .FirstOrDefault(e => e.Id == employeeId);
+
+            if (employee != null && employee.ProjectTasks != null && employee.ProjectTasks.Any())
+            {
+                // Now, employee.Projects contains the projects related to the employee
+                var projectTaskViewModels = employee.ProjectTasks.Select(task => new ProjectTaskViewModel
+                {
+                    Id = task.Id,
+                    Name = task.Name,
+                    IsComplete = task.IsComplete,
+                    CreationDate = task.CreationDate.ToString(),
+                    ProjectName = task.Projects.FirstOrDefault() != null ? task.Projects.First().Name : string.Empty,
+                    ProjectId = task.Projects.Select(p => p.Id).ToList(),
+                    EmployeeId = task.Employees.Select(e=>e.Id).ToList(),
+                    AccountId = task.Employees.FirstOrDefault() != null ? task.Employees.First().AccountId : Guid.Empty
+                }).ToList();
+
+                return projectTaskViewModels;
+            }
+
+            return new List<ProjectTaskViewModel>();
+        }
     }
 }

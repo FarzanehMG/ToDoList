@@ -130,6 +130,25 @@ namespace SimpleToDoList.Api.Controllers
             }
         }
 
+        [HttpGet("GetEmployeeTasks/{employeeId}")]
+        public IActionResult GetEmployeeTasks(Guid employeeId)
+        {
+            Guid loggedInAccountId = GetLoggedInAccountId();
+
+            if (loggedInAccountId == Guid.Empty)
+            {
+                return Unauthorized(new { Message = "Unauthorized: No or invalid token provided" });
+            }
+
+            /*if (loggedInAccountId != employeeId)
+            {
+                return Unauthorized(new { Message = "Unauthorized: User does not have the right to access the todos of the specified account" });
+            }*/
+
+            var result = _projectTaskApplication.GetEmployeeTasks(employeeId);
+            return Ok(result);
+        }
+
 
         private Guid GetLoggedInAccountId()
         {

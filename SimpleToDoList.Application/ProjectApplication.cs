@@ -5,8 +5,6 @@ using SimpleToDoList.Infrastructure;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using SimpleToDoList.Application.Contracts.Employee;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace SimpleToDoList.Application
 {
@@ -128,8 +126,42 @@ namespace SimpleToDoList.Application
 
         }
 
-        public List<ProjectViewModel> GetEmployeeProjects(Guid employeetId)
+        public List<ProjectViewModel> GetEmployeeProjects(Guid employeeId)
         {
+            /*var employee = _todoContext.Employees.Find(employeetId);
+            var employeeProject = _todoContext.Employees.Where(x => x.Id == employeetId);
+            var accountId = _todoContext.Employees.Select(x => x.AccountId);
+            var project = _todoContext.Projects.Select(project => new ProjectViewModel
+            {
+                Id = project.Id,
+                Name = project.Name,
+                IsActive = project.IsActive,
+                AccountId = accountId
+            });
+            */
+
+            var employee = _todoContext.Employees
+                .Include(e => e.Projects) // Include projects navigation property
+                .FirstOrDefault(e => e.Id == employeeId);
+
+            if (employee != null)
+            {
+                // Now, employee.Projects contains the projects related to the employee
+                var projectViewModels = employee.Projects.Select(project => new ProjectViewModel
+                {
+                    Id = project.Id,
+                    Name = project.Name,
+                    IsActive = project.IsActive,
+                    CreationDate = project.CreationDate.ToString(),
+                    //EmployeeId = project.Employees.FirstOrDefault() != null ? project.Employees.First().Id : Guid.Empty,
+                    AccountId = project.Employees.FirstOrDefault() != null ? project.Employees.First().AccountId : Guid.Empty
+                }).ToList();
+
+                return projectViewModels;
+            }
+
+            return new List<ProjectViewModel>();
+
             /*var employee = _todoContext.Employees.Find(employeetId);
 
             return _todoContext.Projects
@@ -144,7 +176,7 @@ namespace SimpleToDoList.Application
                 })
                 .ToList();*/
 
-            var employee = _todoContext.Employees.Find(employeetId);
+            /*var employee = _todoContext.Employees.Find(employeetId);
 
             if (employee == null)
             {
@@ -154,7 +186,7 @@ namespace SimpleToDoList.Application
             }
 
             return _todoContext.Projects
-                .Where(project => project.Employees == employeetId)
+                .Where(employee => employee.Id == employeetId)
                 .Select(project => new ProjectViewModel
                 {
                     Id = project.Id,
@@ -164,7 +196,7 @@ namespace SimpleToDoList.Application
                     AccountId = project.AccountId
                 })
                 .ToList();
-
+            */
         }
 
         public string Update(UpdateProject command)
@@ -216,6 +248,11 @@ namespace SimpleToDoList.Application
             _todoContext.SaveChanges();
 
             return "Project assigned to the employee successfully.";
+        }
+
+        public string FilterAssignProjectByIsComplete(AssignProjectFilter command)
+        {
+            throw new NotImplementedException();
         }
     }
 }

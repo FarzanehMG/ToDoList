@@ -91,8 +91,8 @@ namespace SimpleToDoList.Api.Controllers
             //return Ok(result);
         }
 
-        /*[HttpGet("GetUserProjects/{accountId}")]
-        public IActionResult GetUserProjects(Guid accountId)
+        [HttpGet("GetEmployeeProjects/{employeeId}")]
+        public IActionResult GetUserProjects(Guid employeeId)
         {
             Guid loggedInAccountId = GetLoggedInAccountId();
 
@@ -101,14 +101,14 @@ namespace SimpleToDoList.Api.Controllers
                 return Unauthorized(new { Message = "Unauthorized: No or invalid token provided" });
             }
 
-            if (loggedInAccountId != accountId)
+            /*if (loggedInAccountId != employeeId)
             {
                 return Unauthorized(new { Message = "Unauthorized: User does not have the right to access the todos of the specified account" });
-            }
+            }*/
 
-            var result = _projectApplication.GetUserProjects(accountId);
+            var result = _projectApplication.GetEmployeeProjects(employeeId);
             return Ok(result);
-        }*/
+        }
 
         [HttpGet("GetAllProject")]
         public IActionResult GetAllProject()

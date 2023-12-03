@@ -15,7 +15,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleToDoList.Infrastructu
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleToDoList.Api", "SimpleToDoList.Api\SimpleToDoList.Api.csproj", "{4A4DBDBD-9405-4CFB-9D86-077DB1D1C13F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared", "Shared\Shared.csproj", "{9FD053E4-79C2-4880-A608-FD8F5D22AEBC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shared", "Shared\Shared.csproj", "{9FD053E4-79C2-4880-A608-FD8F5D22AEBC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

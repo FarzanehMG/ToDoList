@@ -12,6 +12,8 @@ namespace SimpleToDoList.Application.Contracts.Project
         public ProjectViewModel GetProjectById(Guid id);
         public string AssignProject(AssignProject command);
 
-        public List<ProjectViewModel> GetEmployeeProjects(Guid accountId);
+        public List<ProjectViewModel> GetEmployeeProjects(Guid employeeId);
+
+        public string FilterAssignProjectByIsComplete(AssignProjectFilter command);
     }
 }

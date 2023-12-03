@@ -1,0 +1,25 @@
+﻿@page
+@model SimpleToDoList.Pages.EditAccountModel
+@{
+}
+
+<h1>Edit Account</h1>
+
+<form method="post">
+	<div>
+		<label asp-for="FullName"></label>
+		<input asp-for="FullName"/>
+	</div>
+	<label asp-for="Username"></label>
+	<input asp-for="Username"/>
+	<div>
+		<label asp-for="Mobile"></label>
+		<input asp-for="Mobile"/>
+	</div>
+	<label asp-for="NewPassword"></label>
+	<input asp-for="NewPassword"/>
+	<div>
+		<input type="hidden" asp-for="Id"/>
+		<button type="submit" asp-page-handler="UpdateAccount">Edit Account</button>
+	</div>
+</form>

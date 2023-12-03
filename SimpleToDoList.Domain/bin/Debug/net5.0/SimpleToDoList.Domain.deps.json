@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "SimpleToDoList.Domain/1.0.0": {
+        "runtime": {
+          "SimpleToDoList.Domain.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "SimpleToDoList.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

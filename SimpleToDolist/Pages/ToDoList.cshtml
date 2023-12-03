@@ -1,0 +1,81 @@
+﻿@page
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@model SimpleToDoList.Pages.ToDoListModel
+@{
+}
+
+<h1>To-Do List</h1>
+
+<a asp-page="/EditAccount" style="background-color: #FFFF00;" asp-route-id="@Model.AccountId">Edit Account</a>
+<form method="post">
+    <button type="submit" asp-page-handler="Logout">Logout</button>
+</form>
+
+<form method="post">
+    <div>
+        <label asp-for="NewToDoName"></label>
+        <input asp-for="NewToDoName" />
+        <button type="submit" asp-page-handler="CreateToDo">Add ToDo</button>
+
+    </div>
+</form>
+<form method="post">
+    <div>
+        <!--onchange="this.form.submit()"-->
+        <select name="Check" asp-for="SelectedStatus">
+            <option value="none">Filter Status</option>
+            <option value="True">Completed</option>
+            <option value="False">Not Completed</option>
+        </select>
+        <button type="submit" asp-page-handler="FilterCompletionStatus">Filter</button>
+    </div>
+</form>
+
+
+<div id="Grid">
+    <table cellpadding="5" cellspacing="0" style="border: 1pxsolid #ccc;font-size: 9pt;font-family:Arial">
+        <tr>
+            <th style="background-color: #B8DBFD;border: 1px solid #ccc">ID</th>
+            <th style="background-color: #B8DBFD;border: 1px solid #ccc">Name</th>
+            <th style="background-color: #B8DBFD;border: 1px solid #ccc">Status</th>
+            <th style="background-color: #B8DBFD;border: 1px solid #ccc">CreationDate</th>
+            <th style="background-color: #B8DBFD;border: 1px solid #ccc">Operation</th>
+        </tr>
+        @foreach (var toDo in Model.ToDos)
+        {
+            <tr>
+                <td style="width:120px;border: 1px solid #ccc">@toDo.Id</td>
+                <td style="width:120px;border: 1px solid #ccc">@toDo.Name</td>
+
+                <td style="width:120px;border: 1px solid #ccc">
+                    <input name="IsCompletedToDo" type="checkbox" onchange="updateCompletionStatus('@toDo.Id', this.checked)" checked="@toDo.IsComplete" />
+                </td>
+
+                <td style="width:120px;border: 1px solid #ccc">@toDo.CreationDate</td>
+                <td style="width: 120px; border: 1px solid #ccc">
+                    <a asp-page="/Edit" style="background-color: #FFFF00;" asp-route-id="@toDo.Id">Edit</a>
+
+                </td>
+            </tr>
+        }
+    </table>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+<script>
+    function updateCompletionStatus(id, isChecked) {
+        $.ajax({
+            type: 'GET',
+            url: '/ToDoList?handler=UpdateCompletionStatus',
+            data: { id: id, isChecked: isChecked },
+            success: function () {
+                location.reload();
+            },
+            error: function () {
+                alert('Failed to update completion status.');
+            }
+        });
+    }
+
+</script>

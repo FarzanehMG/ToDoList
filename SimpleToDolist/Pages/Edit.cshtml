@@ -1,0 +1,15 @@
+﻿@page
+@model SimpleToDoList.Pages.EditModel
+@{
+}
+
+<h1>Edit To-Do List</h1>
+
+<form method="post">
+    <div>
+        <label asp-for="EditToDoName"></label>
+        <input asp-for="EditToDoName" />
+        <input type="hidden" asp-for="Id" />
+        <button type="submit" asp-page-handler="EditToDo">Edit ToDo</button>
+    </div>
+</form>

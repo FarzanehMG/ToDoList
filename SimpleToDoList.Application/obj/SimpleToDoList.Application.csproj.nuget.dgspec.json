@@ -1,0 +1,320 @@
+{
+  "format": 1,
+  "restore": {
+    "\\\\192.168.1.9\\Public\\Karamouz-1402\\تمرین\\FarzanehGholian\\DotNet\\SimpleToDolist\\SimpleToDoList.Application\\SimpleToDoList.Application.csproj": {}
+  },
+  "projects": {
+    "\\\\192.168.1.9\\Public\\Karamouz-1402\\تمرین\\FarzanehGholian\\DotNet\\SimpleToDolist\\Shared\\Shared.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "\\\\192.168.1.9\\Public\\Karamouz-1402\\تمرین\\FarzanehGholian\\DotNet\\SimpleToDolist\\Shared\\Shared.csproj",
+        "projectName": "Shared",
+        "projectPath": "\\\\192.168.1.9\\Public\\Karamouz-1402\\تمرین\\FarzanehGholian\\DotNet\\SimpleToDolist\\Shared\\Shared.csproj",
+        "packagesPath": "C:\\Users\\golian\\.nuget\\packages\\",
+        "outputPath": "\\\\192.168.1.9\\Public\\Karamouz-1402\\تمرین\\FarzanehGholian\\DotNet\\SimpleToDolist\\Shared\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\golian\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.Extensions.Options": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "\\\\192.168.1.9\\Public\\Karamouz-1402\\تمرین\\FarzanehGholian\\DotNet\\SimpleToDolist\\SimpleToDoList.Application.Contracts\\SimpleToDoList.Application.Contracts.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "\\\\192.168.1.9\\Public\\Karamouz-1402\\تمرین\\FarzanehGholian\\DotNet\\SimpleToDolist\\SimpleToDoList.Application.Contracts\\SimpleToDoList.Application.Contracts.csproj",
+        "projectName": "SimpleToDoList.Application.Contracts",
+        "projectPath": "\\\\192.168.1.9\\Public\\Karamouz-1402\\تمرین\\FarzanehGholian\\DotNet\\SimpleToDolist\\SimpleToDoList.Application.Contracts\\SimpleToDoList.Application.Contracts.csproj",
+        "packagesPath": "C:\\Users\\golian\\.nuget\\packages\\",
+        "outputPath": "\\\\192.168.1.9\\Public\\Karamouz-1402\\تمرین\\FarzanehGholian\\DotNet\\SimpleToDolist\\SimpleToDoList.Application.Contracts\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\golian\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "\\\\192.168.1.9\\Public\\Karamouz-1402\\تمرین\\FarzanehGholian\\DotNet\\SimpleToDolist\\SimpleToDoList.Application\\SimpleToDoList.Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "\\\\192.168.1.9\\Public\\Karamouz-1402\\تمرین\\FarzanehGholian\\DotNet\\SimpleToDolist\\SimpleToDoList.Application\\SimpleToDoList.Application.csproj",
+        "projectName": "SimpleToDoList.Application",
+        "projectPath": "\\\\192.168.1.9\\Public\\Karamouz-1402\\تمرین\\FarzanehGholian\\DotNet\\SimpleToDolist\\SimpleToDoList.Application\\SimpleToDoList.Application.csproj",
+        "packagesPath": "C:\\Users\\golian\\.nuget\\packages\\",
+        "outputPath": "\\\\192.168.1.9\\Public\\Karamouz-1402\\تمرین\\FarzanehGholian\\DotNet\\SimpleToDolist\\SimpleToDoList.Application\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\golian\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "\\\\192.168.1.9\\Public\\Karamouz-1402\\تمرین\\FarzanehGholian\\DotNet\\SimpleToDolist\\Shared\\Shared.csproj": {
+                "projectPath": "\\\\192.168.1.9\\Public\\Karamouz-1402\\تمرین\\FarzanehGholian\\DotNet\\SimpleToDolist\\Shared\\Shared.csproj"
+              },
+              "\\\\192.168.1.9\\Public\\Karamouz-1402\\تمرین\\FarzanehGholian\\DotNet\\SimpleToDolist\\SimpleToDoList.Application.Contracts\\SimpleToDoList.Application.Contracts.csproj": {
+                "projectPath": "\\\\192.168.1.9\\Public\\Karamouz-1402\\تمرین\\FarzanehGholian\\DotNet\\SimpleToDolist\\SimpleToDoList.Application.Contracts\\SimpleToDoList.Application.Contracts.csproj"
+              },
+              "\\\\192.168.1.9\\Public\\Karamouz-1402\\تمرین\\FarzanehGholian\\DotNet\\SimpleToDolist\\SimpleToDoList.Infrastructure\\SimpleToDoList.Infrastructure.csproj": {
+                "projectPath": "\\\\192.168.1.9\\Public\\Karamouz-1402\\تمرین\\FarzanehGholian\\DotNet\\SimpleToDolist\\SimpleToDoList.Infrastructure\\SimpleToDoList.Infrastructure.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Http.Abstractions": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "\\\\192.168.1.9\\Public\\Karamouz-1402\\تمرین\\FarzanehGholian\\DotNet\\SimpleToDolist\\SimpleToDoList.Domain\\SimpleToDoList.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "\\\\192.168.1.9\\Public\\Karamouz-1402\\تمرین\\FarzanehGholian\\DotNet\\SimpleToDolist\\SimpleToDoList.Domain\\SimpleToDoList.Domain.csproj",
+        "projectName": "SimpleToDoList.Domain",
+        "projectPath": "\\\\192.168.1.9\\Public\\Karamouz-1402\\تمرین\\FarzanehGholian\\DotNet\\SimpleToDolist\\SimpleToDoList.Domain\\SimpleToDoList.Domain.csproj",
+        "packagesPath": "C:\\Users\\golian\\.nuget\\packages\\",
+        "outputPath": "\\\\192.168.1.9\\Public\\Karamouz-1402\\تمرین\\FarzanehGholian\\DotNet\\SimpleToDolist\\SimpleToDoList.Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\golian\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "\\\\192.168.1.9\\Public\\Karamouz-1402\\تمرین\\FarzanehGholian\\DotNet\\SimpleToDolist\\SimpleToDoList.Infrastructure\\SimpleToDoList.Infrastructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "\\\\192.168.1.9\\Public\\Karamouz-1402\\تمرین\\FarzanehGholian\\DotNet\\SimpleToDolist\\SimpleToDoList.Infrastructure\\SimpleToDoList.Infrastructure.csproj",
+        "projectName": "SimpleToDoList.Infrastructure",
+        "projectPath": "\\\\192.168.1.9\\Public\\Karamouz-1402\\تمرین\\FarzanehGholian\\DotNet\\SimpleToDolist\\SimpleToDoList.Infrastructure\\SimpleToDoList.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\golian\\.nuget\\packages\\",
+        "outputPath": "\\\\192.168.1.9\\Public\\Karamouz-1402\\تمرین\\FarzanehGholian\\DotNet\\SimpleToDolist\\SimpleToDoList.Infrastructure\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\golian\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "\\\\192.168.1.9\\Public\\Karamouz-1402\\تمرین\\FarzanehGholian\\DotNet\\SimpleToDolist\\SimpleToDoList.Domain\\SimpleToDoList.Domain.csproj": {
+                "projectPath": "\\\\192.168.1.9\\Public\\Karamouz-1402\\تمرین\\FarzanehGholian\\DotNet\\SimpleToDolist\\SimpleToDoList.Domain\\SimpleToDoList.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

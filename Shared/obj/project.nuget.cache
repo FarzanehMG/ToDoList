@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "opA5QClk3rTdJbHdjsb7J+0vrboyFvORdkSunbvPl8b7kUyQVPNZSqSqFk/oS7yyMTKVIz060SvFh9lC0UGPrQ==",
+  "success": true,
+  "projectFilePath": "\\\\192.168.1.9\\Public\\Karamouz-1402\\تمرین\\FarzanehGholian\\DotNet\\SimpleToDolist\\Shared\\Shared.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\golian\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0\\microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512",
+    "C:\\Users\\golian\\.nuget\\packages\\microsoft.extensions.options\\8.0.0\\microsoft.extensions.options.8.0.0.nupkg.sha512",
+    "C:\\Users\\golian\\.nuget\\packages\\microsoft.extensions.primitives\\8.0.0\\microsoft.extensions.primitives.8.0.0.nupkg.sha512",
+    "C:\\Users\\golian\\.nuget\\packages\\system.componentmodel.annotations\\5.0.0\\system.componentmodel.annotations.5.0.0.nupkg.sha512",
+    "C:\\Users\\golian\\.nuget\\packages\\system.memory\\4.5.5\\system.memory.4.5.5.nupkg.sha512",
+    "C:\\Users\\golian\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
